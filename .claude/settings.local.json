@@ -1,0 +1,40 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find D:/xampp/htdocs/LK_Healthcare/database/migrations -type f -name \"*.php\" -exec grep -l \"create_\\\\|add_\" {} \\\\;)",
+      "Bash(find D:/xampp/htdocs/LK_Healthcare -name \".env*\" -exec echo \"=== {} ===\" \\\\; -exec cat {} \\\\;)",
+      "Bash(xargs grep *)",
+      "Bash(xargs -I {} basename {})",
+      "Bash(php artisan *)",
+      "Bash(composer require *)",
+      "Bash(npm run *)",
+      "Bash(php -r ' *)",
+      "Bash(pkill -f \"artisan serve\")",
+      "Bash(find resources/views -name \"*.blade.php\" -exec sed -i 's/border-slate-100/border-slate-200/g' {} +)",
+      "Bash(find resources/views -name '*.blade.php' -exec sed -i -e 's/sky-50\\\\b/teal-50/g' -e 's/sky-100\\\\b/teal-100/g' -e 's/sky-200\\\\b/teal-200/g' -e 's/sky-300\\\\b/teal-300/g' -e 's/sky-400\\\\b/teal-400/g' -e 's/sky-500\\\\b/teal-500/g' -e 's/sky-600\\\\b/teal-600/g' -e 's/sky-700\\\\b/teal-700/g' -e 's/sky-800\\\\b/teal-800/g' -e 's/sky-900\\\\b/teal-900/g' -e s/from-cyan-400/from-emerald-500/g -e s/to-cyan-400/to-emerald-500/g -e s/via-cyan-400/via-emerald-500/g -e s/from-cyan-500/from-emerald-500/g -e s/to-cyan-500/to-emerald-500/g -e s/via-cyan-500/via-emerald-500/g -e s/from-cyan-600/from-emerald-600/g -e s/to-cyan-600/to-emerald-600/g -e s/via-cyan-600/via-emerald-600/g -e s/cyan-50/emerald-50/g -e s/cyan-100/emerald-100/g '{}' +)",
+      "Bash(find resources/views -name \"*.blade.php\" -exec sed -i \"s/'color'=>'sky'/'color'=>'teal'/g; s/\\\\\"color\\\\\"=>\\\\\"sky\\\\\"/\\\\\"color\\\\\"=>\\\\\"teal\\\\\"/g\" {} +)",
+      "Bash(py -c \"import zipfile; z=zipfile.ZipFile\\(r'D:\\\\xampp\\\\htdocs\\\\LK_Healthcare\\\\LK_Healthcare_Mobile_API_Reference.docx'\\); xml=z.read\\('word/document.xml'\\).decode\\('utf-8'\\); print\\('w:p count:', xml.count\\('<w:p>'\\) + xml.count\\('<w:p '\\)\\)\")",
+      "Bash(Get-ChildItem \"D:\\\\xampp\\\\htdocs\\\\LK_Healthcare\\\\config\\\\auth.php\")",
+      "Bash(dir /b routes)",
+      "Bash(dir /b app\\\\Models)",
+      "Bash(dir /b mobile_app)",
+      "Bash(dir /b database\\\\migrations)",
+      "Bash(cd /d D:\\\\xampp\\\\htdocs\\\\LK_Healthcare)",
+      "Bash(powershell -Command \"\\(Get-Content resources\\\\views\\\\admin\\\\sitecontent.blade.php\\) -replace 'indigo','emerald' | Set-Content -Encoding utf8 resources\\\\views\\\\admin\\\\sitecontent.blade.php\")",
+      "Bash(curl -s -o /dev/null -w \"Home: %{http_code}\\\\n\" http://127.0.0.1:8000/)",
+      "Bash(curl -s http://127.0.0.1:8000/)",
+      "Bash(curl -s -o /dev/null -w \"Reviews\\(guest->redirect\\): %{http_code}\\\\n\" http://127.0.0.1:8000/reviews)",
+      "Bash(curl -s -o /dev/null -w \"Emergency \\(guest\\): %{http_code}\\\\n\" http://127.0.0.1:8000/emergency)",
+      "Bash(curl -s -o /dev/null -w \"About: %{http_code}\\\\n\" http://127.0.0.1:8000/about)",
+      "Bash(ls public/assets/site_images/founder.jpg)",
+      "mcp__Claude_in_Chrome__tabs_context_mcp",
+      "mcp__Claude_Preview__preview_start",
+      "PowerShell(php artisan view:clear)",
+      "PowerShell(\"done\")",
+      "PowerShell($ini = \\(php --ini | Select-String \"Loaded Configuration File\"\\).ToString\\(\\); $ini; \"GD loaded: \" + [bool]\\(php -m | Select-String -SimpleMatch \"gd\"\\))",
+      "PowerShell(Get-CimInstance Win32_Process -Filter \"Name='php.exe'\" | Where-Object { $_.CommandLine -match 'artisan serve' } | ForEach-Object { \"Killing PID $\\($_.ProcessId\\): $\\($_.CommandLine\\)\"; Stop-Process -Id $_.ProcessId -Force }; \"done\")",
+      "PowerShell(Start-Sleep -Seconds 3; try { $r = Invoke-WebRequest -Uri \"http://127.0.0.1:8000/\" -UseBasicParsing -TimeoutSec 10; \"Server UP: \" + $r.StatusCode } catch { \"Server check: \" + $_.Exception.Message })",
+      "PowerShell(php artisan tinker --execute=\"$u = App\\\\Models\\\\User::where\\('name','like','%shish%'\\)->orWhere\\('email','like','%shish%'\\)->get\\(['id','name','email']\\); foreach\\($u as $x\\){ $hasPatient = App\\\\Models\\\\Patient::where\\('user_id',$x->id\\)->exists\\(\\); $roles = $x->getRoleNames\\(\\)->implode\\(','\\); echo $x->id.' | '.$x->name.' | '.$x->email.' | roles='.$roles.' | patient_row='.\\($hasPatient?'YES':'NO'\\).PHP_EOL; } if\\($u->isEmpty\\(\\)\\) echo 'No user matching ashish found';\")"
+    ]
+  }
+}
